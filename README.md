@@ -16,6 +16,3 @@ intended for running studies on an existing CST MWS file.
 
 Please submit any extensions you make to this package for the
 benefit of all users.
-
-Matthew Parry.
-<matthew@mparry.com.au>
