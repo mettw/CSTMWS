@@ -2,9 +2,9 @@
 
 A port of CST MicrowaveStudio to Matlab OOP.  This is very incomplete,
 but it is simple to extend using the CST documentation under "VBScript"
-and the example file 'runcst.mlx'.
+and the example file 'runcst_oop.mlx'.
 
-The file 'runcst.mlx' contains an example LiveScript that uses
+The file 'runcst_oop.mlx' contains an example LiveScript that uses
 the CSTMWS class.  It also contains the text of the CST documentation
 "Application Note – Calling CST Studio from Matlab".  Note that you
 won't be able to run this file since it loads a pre-existing CST MWS
