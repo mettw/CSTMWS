@@ -14,7 +14,7 @@ to get you started.
 This is *not* a general purpose port of CST's VBScript but is only
 intended for running studies on an existing CST MWS file.
 
-Please submit any extensions you make of this package for the
+Please submit any extensions you make to this package for the
 benefit of all users.
 
 Matthew Parry.
