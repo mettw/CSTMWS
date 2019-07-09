@@ -25,6 +25,10 @@ classdef CST_FDSolver < handle
             invoke(hObj.solver, 'Start');
         end
         
+        function AcceleratedRestart(hObj, flag)
+            invoke(hObj.solver, 'AcceleratedRestart', flag);
+        end
+        
         function AccuracyTet(hObj, accuracy)
             invoke(hObj.solver, 'AccuracyTet', accuracy);
         end

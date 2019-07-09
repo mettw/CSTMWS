@@ -26,16 +26,17 @@ classdef CSTMWS < handle
             % Microwave Studio.
             hObj.cst = actxserver('CSTStudio.Application');
             hObj.mws = invoke(hObj.cst, 'OpenFile', fname);
+            hObj.mwsObjects = {};
         end
         
         function Quit(hObj)
             % When I release all of the objects my script file will be
             % finished, so it is appropriate to put these after a 'Quit'
             % call.
-            invoke(hObj.cst, 'Quit');
+            invoke(hObj.mws, 'Quit');
             %release: release the VBScript objects
-            for i=length(hObj.mwsObjects):-1:1
-                release(hObj.mwsObjects(i).getCSTObject);
+            for i=length(hObj.mwsObjects):-1:2
+                release(hObj.mwsObjects{i}{1}.getCSTObject);
             end
             release(hObj.mws);
             release(hObj.cst);
@@ -59,22 +60,22 @@ classdef CSTMWS < handle
         
         function solver = FDSolver(hObj)
            solver = CST_FDSolver(hObj.mws); 
-           hObj.mwsObjects = [hObj.mwsObjects, solver];
+           hObj.mwsObjects = {hObj.mwsObjects, {solver}};
         end
         
         function rtree = ResultTree(hObj)
            rtree = CST_ResultTree(hObj.mws); 
-           hObj.mwsObjects = [hObj.mwsObjects, rtree];
+           hObj.mwsObjects = {hObj.mwsObjects, {rtree}};
         end
         
-        function ascii_exp = ASCIIExport(hObj, fname)
-           ascii_exp = CST_ASCIIExport(hObj, fname); 
-           hObj.mwsObjects = [hObj.mwsObjects, ascii_exp];
+        function ascii_exp = ASCIIExport(hObj)
+           ascii_exp = CST_ASCIIExport(hObj.mws); 
+           hObj.mwsObjects = {hObj.mwsObjects, {ascii_exp}};
         end
         
         function tstone = TOUCHSTONE(hObj, fname)
-           tstone = CST_TOUCHSTONE(hObj, fname); 
-           hObj.mwsObjects = [hObj.mwsObjects, tstone];
+           tstone = CST_TOUCHSTONE(hObj.mws, fname); 
+           hObj.mwsObjects = {hObj.mwsObjects, {tstone}};
         end
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
