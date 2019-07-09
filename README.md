@@ -6,10 +6,7 @@ and the example file 'runcst_oop.mlx'.
 
 The file 'runcst_oop.mlx' contains an example LiveScript that uses
 the CSTMWS class.  It also contains the text of the CST documentation
-"Application Note – Calling CST Studio from Matlab".  Note that you
-won't be able to run this file since it loads a pre-existing CST MWS
-file that is not included in this repository - This is just an example
-to get you started.
+"Application Note – Calling CST Studio from Matlab".  
 
 This is *not* a general purpose port of CST's VBScript but is only
 intended for running studies on an existing CST MWS file.
