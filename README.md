@@ -13,3 +13,5 @@ intended for running studies on an existing CST MWS file.
 
 Please submit any extensions you make to this package for the
 benefit of all users.
+
+[![View CSTMWS on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://au.mathworks.com/matlabcentral/fileexchange/71616-cstmws)
